@@ -34,7 +34,14 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            }
+            },
+            {
+                "guid": "{abc00000-0000-0000-0000-000000000000}",
+                "name": "Git-Bash",
+                "commandline": "%PROGRAMFILES%\\Git\\bin\\bash.exe",
+                "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "startingDirectory" : "~"
+             }
         ]
     },
 
