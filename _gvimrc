@@ -1,0 +1,147 @@
+" An example for a gvimrc file.
+" The commands in this are executed when the GUI is started.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2001 Sep 02
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.gvimrc
+"	      for Amiga:  s:.gvimrc
+"  for MS-DOS and Win32:  $VIM\_gvimrc
+"	    for OpenVMS:  sys$login:.gvimrc
+" Make external commands work through a pipe instead of a pseudo-tty
+"set noguipty
+
+" set the X11 font to use
+" set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+let g:islinux=0
+source $VIM\bundles.vim
+"set guifont=gohufont-14
+set guifont=Ubuntu\ Mono:h12
+
+"hide the menubar of gvim 
+"set guioptions -=m
+
+"hide the toolbar of gvim 
+"set guioptions -=T
+
+set guifont=Ubuntu\ Mono:h12
+
+set ch=2		" Make command line two lines high
+
+set mousehide		" Hide the mouse when typing text
+
+set modifiable "allow NERDTree to manage files
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+map <Space> :noh<CR>
+" Only do this for Vim version 5.0 and later.
+if version >= 500
+
+" I like highlighting strings inside C comments
+let c_comment_strings=1
+
+" Switch on syntax highlighting if it wasn't on yet.
+"if !exists("syntax_on")
+"    syntax on
+"endif
+
+" Switch on search pattern highlighting.
+set hlsearch
+
+" For Win32 version, have "K" lookup the keyword in a help file
+"if has("win32")
+"  let winhelpfile='windows.hlp'
+"  map K :execute "!start winhlp32 -k <cword> " . winhelpfile <CR>
+"endif
+
+" Set nice colors
+" background for normal text is light grey
+" Text below the last line is darker grey
+" Cursor is green, Cyan when ":lmap" mappings are active
+" Constants are not underlined but have a slightly lighter background
+highlight Normal guibg=grey90
+highlight Cursor guibg=Green guifg=NONE
+highlight lCursor guibg=Cyan guifg=NONE
+highlight NonText guibg=grey90
+highlight Constant gui=NONE guibg=grey90
+highlight Special gui=NONE guibg=grey90
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
+
+set incsearch
+set autoindent
+set cindent
+set nu
+set langmenu='en_US'
+let $LANG='en_US'
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set smarttab
+set autoindent
+
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+let g:netrw_liststyle=3
+let g:netrw_keepdir=0
+set wildmenu
+set cpo-=<
+set wcm=<C-Z>
+set nowrap
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
+set encoding=utf-8
+
+map <F4> :emenu <C-Z>
+nmap <Esc>[5D :bp<CR>
+nmap <Esc>Od  :bp<CR>
+nmap <Esc>OD  :bp<CR>
+nmap <Esc>[5C :bn<CR>
+nmap <Esc>Oc  :bn<CR>
+nmap <Esc>OC  :bn<CR>
+nmap <Esc>[3~ :bd<CR>
+nmap ZZ :bd<CR>
+nmap <Esc>bbb :!python %<CR>
+nmap <Esc>mc :!gcc -Wall -g % -o a.out && a.out && rm a.out<CR>
+nmap <Esc>mx :!g++ -Wall -g % -o a.out && a.out && rm a.out <CR>
+nmap <Esc>mz :!g++ -std=c++0x -Wall -g % -o a.out && a.out && rm a.out<CR>
+nmap <Esc>md :!g++ -std=c++0x -Wall -g % -o a.out && gdb a.out && rm a.out<CR>
+nmap <Esc>mp :!php %<CR>
+nmap <Esc>bj :!javac Solution.java && java Solution<CR>
+nmap <Esc>gh :!ghci %<CR>
+nmap <Esc>rh :!runhaskell %<CR>
+nmap <Esc>[tg :!ctags -R .<CR>
+nmap <Esc>nl :nohlsearch<CR>
+nnoremap <F6> :NERDTree<CR>
+nnoremap <F10> :e $VIM\_gvimrc<CR>
+nnoremap <F11> :e $VIM\.vimrc<CR>
+map <C-\> :NERDTreeToggle<CR>
+nnoremap <F8> :NERDTreeFind<CR>
+nnoremap <F9> :!ctags -R .<CR>
+map! <F3> a<C-R>=strftime('%c')<CR><Esc>
+nmap <Esc>jk :n<CR>
+nmap <Esc>kj :N<CR>
+nmap <Esc>ui :tabn<CR>
+nmap <Esc>iu :tabp<CR>
+"let g:global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+"let g:global_ycm_extra_conf='C:\Users\Administrator\vim-7.4.417\.ycm_extra_conf.py'
+"let g:ycm_collect_identifiers_from_tag_files = 0
+"let g:ycm_seed_identifiers_with_syntax = 0
+"let g:ycm_confirm_extra_conf=0
+"let g:ycm_key_invoke_completion = '<C-/>'
+"let g:ycm_complete_in_comments=1  
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_min_num_of_chars_for_completion=1
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"let g:ycm_cache_omnifunc=0  
+"let g:ycm_seed_identifiers_with_syntax=1  
+"let g:ycm_key_invoke_completion = '<M-;>'  
+"nnoremap <F3> :YcmRestartServer<CR>
+"nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+"nmap <F4> :YcmCompleter GoToDefinitionElseDeclaration <C-R>=expand("<cword>")<CR><CR> 
+endif
