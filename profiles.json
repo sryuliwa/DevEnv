@@ -61,7 +61,9 @@
         { "command": "copy", "keys": ["ctrl+shift+c"] },
         { "command": "newTab", "keys": ["ctrl+shift+t"] },
         { "command": "nextTab", "keys": ["alt+right"] },
-        { "command": "prevTab", "keys": ["alt+left"] }
+        { "command": "prevTab", "keys": ["alt+left"] },
+        { "command": "splitHorizontal", "keys": ["ctrl+shift+-"] },
+        { "command": "splitVertical", "keys": ["ctrl+shift+E"] }
 
     ]
 }
