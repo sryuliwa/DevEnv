@@ -63,7 +63,11 @@
         { "command": "nextTab", "keys": ["alt+right"] },
         { "command": "prevTab", "keys": ["alt+left"] },
         { "command": "splitHorizontal", "keys": ["ctrl+shift+-"] },
-        { "command": "splitVertical", "keys": ["ctrl+shift+E"] }
+        { "command": "splitVertical", "keys": ["ctrl+shift+E"] },
+        { "command": "moveFocusLeft", "keys": ["shift+left"] },
+        { "command": "moveFocusRight", "keys": ["shift+right"] },
+        { "command": "moveFocusUp", "keys": ["shift+up"] },
+        { "command": "moveFocusDown", "keys": ["shift+down"] }
 
     ]
 }
