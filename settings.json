@@ -11,7 +11,11 @@
     {
         "defaults":
         {
-            "cursorShape": "vintage"
+            "cursorShape": "vintage",
+            "backgroundImage": "%HOME%\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\background.png",
+            "backgroundImageOpacity": 0.1,
+            "backgroundImageStretchMode": "none",
+            "backgroundImageAlignment": "bottomRight"
         },
         "list":
         [
